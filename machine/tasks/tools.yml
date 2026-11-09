@@ -72,6 +72,7 @@
       sha256: "{{ codex_sha256 }}"
       url: "https://github.com/openai/codex/releases/download/rust-v{{ codex_version }}/codex-package-x86_64-unknown-linux-musl.tar.gz"
       program: bin/codex
+  when: pinned.name != 'codex' or install_codex
   loop_control:
     loop_var: pinned
     label: "{{ pinned.name }}"

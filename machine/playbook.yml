@@ -14,6 +14,13 @@
     # Overridable with -e or ~/.config/dataforge/setup.yml.
     # The personal zsh layer: oh-my-zsh, powerlevel10k and its prompt config.
     zsh_personal: true
+    # Optional parts, all installed by default. A machine that does not need
+    # one turns it off in ~/.config/dataforge/setup.yml; the setup then skips
+    # it and leaves whatever an earlier run installed.
+    install_tex: true          # XeLaTeX, Beamer and latexmk (ubuntu_tex_packages)
+    install_chrome: true       # Google Chrome's pinned .deb
+    install_onepassword: true  # the 1Password CLI, op, and its apt source
+    install_codex: true        # Codex CLI (a Codex gateway client)
     # Where the user puts the token of the GitHub account the machine commits
     # and opens PRs with. The setup only hands this path to `gh auth login`;
     # it never reads the value itself.

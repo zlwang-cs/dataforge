@@ -6,6 +6,7 @@
     cache_valid_time: 86400
 
 - name: TeX packages
+  when: install_tex
   become: true
   ansible.builtin.apt:
     name: "{{ ubuntu_tex_packages }}"
