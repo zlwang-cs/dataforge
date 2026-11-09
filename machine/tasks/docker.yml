@@ -30,6 +30,9 @@
       - "docker-buildx-plugin={{ docker_buildx_version }}"
       - "docker-compose-plugin={{ docker_compose_version }}"
     update_cache: "{{ docker_repo.changed }}"
+  # As for the vendor packages (tasks/vendor-apt.yml): check mode adds no
+  # source, so on a machine without Docker's yet the packages cannot be found.
+  ignore_errors: "{{ ansible_check_mode and docker_repo.changed }}"
 
 - name: Agent user in the docker group
   become: true
