@@ -40,6 +40,8 @@
     name: "{{ user }}"
     groups: docker
     append: true
+  # Check mode installs no Docker, so the group may not exist yet.
+  ignore_errors: "{{ ansible_check_mode and docker_repo.changed }}"
 
 # The setup owns log-driver and log-opts in /etc/docker/daemon.json (values
 # in playbook.yml): json-file without rotation, Docker's default, grows each
