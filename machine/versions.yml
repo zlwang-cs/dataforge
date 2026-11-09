@@ -49,7 +49,7 @@ docker_compose_version: "5.7.0-1~ubuntu.26.04~resolute"
 tailscale_apt_gpg_sha256: 3e03dacf222698c60b8e2f990b809ca1b3e104de127767864284e6c228f1fb39
 tailscale_version: "1.104.5"
 op_apt_gpg_sha256: f39e7dd9dedc581ced85732832f217e0de5860a3b80279b5af4bc7c6d8157bae
-op_version: "2.41.1-1"
+op_version: "2.42.0-1"
 
 # NodeSource keeps one repository per Node.js major version, and every
 # release of that line in it, so the package is pinned like Docker's.
