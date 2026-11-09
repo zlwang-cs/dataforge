@@ -35,6 +35,7 @@
   ignore_errors: "{{ ansible_check_mode and docker_repo.changed }}"
 
 - name: Agent user in the docker group
+  when: agent_in_docker_group
   become: true
   ansible.builtin.user:
     name: "{{ user }}"

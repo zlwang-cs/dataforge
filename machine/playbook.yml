@@ -26,6 +26,10 @@
     # a smaller plan sets e.g. claude_model: sonnet, claude_auto_compact_window: 200000.
     claude_model: "opus[1m]"
     claude_auto_compact_window: 520000
+    # Whether the agent user joins the docker group (which is as good as root).
+    # A machine whose agents need no Docker, or that also holds other data,
+    # turns it off; the setup then leaves the group membership as it is.
+    agent_in_docker_group: true
     # Where the user puts the token of the GitHub account the machine commits
     # and opens PRs with. The setup only hands this path to `gh auth login`;
     # it never reads the value itself.
