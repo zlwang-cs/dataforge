@@ -12,7 +12,7 @@
     checksum: "sha256:{{ item.sha256 }}"
     mode: "0644"
   loop:
-    - { url: https://pkgs.tailscale.com/stable/ubuntu/{{ ubuntu_suite }}.noarmor.gpg, file: tailscale.gpg, sha256: "{{ tailscale_apt_gpg_sha256 }}" }
+    - { url: "https://pkgs.tailscale.com/stable/ubuntu/{{ ubuntu_suite }}.noarmor.gpg", file: tailscale.gpg, sha256: "{{ tailscale_apt_gpg_sha256 }}" }
     - { url: https://downloads.1password.com/linux/keys/1password.asc, file: 1password.asc, sha256: "{{ op_apt_gpg_sha256 }}" }
     - { url: https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key, file: nodesource.asc, sha256: "{{ nodesource_apt_gpg_sha256 }}" }
   loop_control:
