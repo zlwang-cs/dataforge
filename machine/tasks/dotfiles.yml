@@ -33,6 +33,8 @@
   vars:
     chezmoi_data:
       zsh_personal: "{{ zsh_personal | bool }}"
+      claude_model: "{{ claude_model }}"
+      claude_auto_compact_window: "{{ claude_auto_compact_window | int }}"
       oh_my_zsh_commit: "{{ oh_my_zsh_commit }}"
       oh_my_zsh_sha256: "{{ oh_my_zsh_sha256 }}"
       powerlevel10k_commit: "{{ powerlevel10k_commit }}"

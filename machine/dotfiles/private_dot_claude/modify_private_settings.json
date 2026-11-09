@@ -13,6 +13,9 @@
 {{- end -}}
 {{- $merged := mergeOverwrite (deepCopy $current) (fromJson (include "../files/claude-settings.json")) -}}
 {{- $_ := unset $merged.env "DISABLE_AUTOUPDATER" -}}
+{{- /* The machine's model and auto-compact window (playbook.yml), over the defaults. */ -}}
+{{- if .claude_model -}}{{- $_ := set $merged "model" .claude_model -}}{{- end -}}
+{{- if .claude_auto_compact_window -}}{{- $_ := set $merged "autoCompactWindow" (int .claude_auto_compact_window) -}}{{- end -}}
 {{- if eq (toJson $current) (toJson $merged) -}}
 {{- .chezmoi.stdin -}}
 {{- else -}}

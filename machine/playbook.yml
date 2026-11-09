@@ -21,6 +21,11 @@
     install_chrome: true       # Google Chrome's pinned .deb
     install_onepassword: true  # the 1Password CLI, op, and its apt source
     install_codex: true        # Codex CLI (a Codex gateway client)
+    # The agents' default Claude Code model and the window auto-compact counts
+    # against (files/claude-settings.json holds the same defaults); a machine on
+    # a smaller plan sets e.g. claude_model: sonnet, claude_auto_compact_window: 200000.
+    claude_model: "opus[1m]"
+    claude_auto_compact_window: 520000
     # Where the user puts the token of the GitHub account the machine commits
     # and opens PRs with. The setup only hands this path to `gh auth login`;
     # it never reads the value itself.
