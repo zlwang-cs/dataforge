@@ -30,19 +30,24 @@ uv_sha256: b9980552309f09c15172b8be828555e375097f16deb459795ce7bfd200380f0b
 ansible_core_version: 2.21.5
 ansible_python_version: 3.13
 
+# The Ubuntu release's codename, used for the suites of the vendor apt
+# repositories that publish one per release (Docker, Tailscale).
+# This machine runs Ubuntu 26.04 (resolute); upstream targets 24.04 (noble).
+ubuntu_suite: resolute
+
 # Docker's own apt repository keeps old versions, so every package from it
 # is pinned.
 docker_apt_gpg_sha256: 1500c1f56fa9e26b9b8f42452a553675796ade0807cdce11975eb98170b3a570
-docker_version: "5:29.8.2-1~ubuntu.24.04~noble"
-containerd_version: "2.3.6-1~ubuntu.24.04~noble"
-docker_buildx_version: "0.37.1-1~ubuntu.24.04~noble"
-docker_compose_version: "5.6.0-1~ubuntu.24.04~noble"
+docker_version: "5:29.9.3-1~ubuntu.26.04~resolute"
+containerd_version: "2.4.2-3~ubuntu.26.04~resolute"
+docker_buildx_version: "0.38.1-1~ubuntu.26.04~resolute"
+docker_compose_version: "5.7.0-1~ubuntu.26.04~resolute"
 
 # Tailscale's and 1Password's apt repositories keep old versions, so their
 # packages are pinned like Docker's. Only the programs are installed: the
 # setup joins no tailnet and signs in to no account.
 tailscale_apt_gpg_sha256: 3e03dacf222698c60b8e2f990b809ca1b3e104de127767864284e6c228f1fb39
-tailscale_version: "1.104.1"
+tailscale_version: "1.104.5"
 op_apt_gpg_sha256: f39e7dd9dedc581ced85732832f217e0de5860a3b80279b5af4bc7c6d8157bae
 op_version: "2.41.1-1"
 
