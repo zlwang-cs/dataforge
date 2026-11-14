@@ -30,6 +30,10 @@
     # A machine whose agents need no Docker, or that also holds other data,
     # turns it off; the setup then leaves the group membership as it is.
     agent_in_docker_group: true
+    # Own tools (own_tools below, by name) this machine builds itself, e.g. a
+    # fork of fleet: the setup neither installs nor upgrades them, and leaves
+    # what is in /usr/local/bin as it is.
+    own_tools_local: []
     # Where the user puts the token of the GitHub account the machine commits
     # and opens PRs with. The setup only hands this path to `gh auth login`;
     # it never reads the value itself.

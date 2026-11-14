@@ -82,7 +82,7 @@
 # the setup leaves it as it is.
 - name: Own tools
   ansible.builtin.include_tasks: own-tool.yml
-  loop: "{{ own_tools }}"
+  loop: "{{ own_tools | rejectattr('name', 'in', own_tools_local) | list }}"
   loop_control:
     loop_var: tool
     label: "{{ tool.name }}"
